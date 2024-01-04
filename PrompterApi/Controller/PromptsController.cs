@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PrompterApi.AddControllers
 {
+  [Route("api/[controller]")]
   [ApiController]
   public class PromptsController: ControllerBase
   {
@@ -13,11 +14,12 @@ namespace PrompterApi.AddControllers
       _db = db;
     }
 
-    [HttpGet]
+    [HttpGet("latest")]
     public async Task<string> Get()
     {
       Prompt prompt = await _db.Prompts.OrderByDescending(p => p.PromptId).FirstOrDefaultAsync();
-      return prompt.PromptText;
+      string text = prompt.PromptText;
+      return text;
     }
 
     [HttpPost]
@@ -25,7 +27,7 @@ namespace PrompterApi.AddControllers
     {
       _db.Prompts.Add(prompt);
       await _db.SaveChangesAsync();
-      return CreatedAtAction(nameof(Get), new { id = prompt.PromptId }, prompt);
+      return NoContent();
     }
   }
 }
