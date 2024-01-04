@@ -11,12 +11,12 @@ namespace PrompterApi.Models
     {
     }
 
-  protected override void OnModelCreating(ModelBuilder builder)
-  {
-    builder.Entity<Prompt>()
-      .HasData(
-        new Prompt { PromptId = 1, PromptText = "What is your favorite color?" }
-      );
-  }
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+      builder.Entity<Prompt>()
+        .HasData(
+          new Prompt { PromptId = 1, PromptText = "What is your favorite color?" }
+        );
+    }
   }
 }
