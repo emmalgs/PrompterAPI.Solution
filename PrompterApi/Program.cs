@@ -14,8 +14,19 @@ builder.Services.AddDbContext<PrompterApiContext>(
                     )
                   )
                 );
+builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+else
+{
+    app.UseHttpsRedirection();
+}
 
 app.ConfigureSwagger();
 
