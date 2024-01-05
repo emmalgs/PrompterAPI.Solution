@@ -14,6 +14,16 @@ builder.Services.AddDbContext<PrompterApiContext>(
                     )
                   )
                 );
+                
+builder.Services.AddCors(options => 
+{
+    options.AddDefaultPolicy(builder => 
+    {
+        builder.AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin();
+    });
+});
 
 var app = builder.Build();
 
