@@ -29,6 +29,8 @@ var app = builder.Build();
 
 app.ConfigureSwagger();
 
+app.UseCors();
+
 app.UseStaticFiles();
 
 app.UseRouting();
