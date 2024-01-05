@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc.Versioning;
-using System.Text;
 
 namespace PrompterApi.Startup;
 
@@ -30,7 +29,6 @@ public static class DependencyInjectionSetup
 
     services.ConfigureOptions<SwaggerConfiguration.ConfigureSwaggerOptions>();
 
-    services.AddEndpointsApiExplorer();
     services.AddSwaggerGen();
 
     return services;
