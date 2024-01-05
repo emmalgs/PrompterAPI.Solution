@@ -9,8 +9,8 @@ builder.Services.RegisterServices();
 builder.Services.AddDbContext<PrompterApiContext>(
                   dbContextOptions => dbContextOptions
                     .UseMySql(
-                      builder.Configuration["ConnectionStrings:DefaultConnection"],
-                      ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
+                      builder.Configuration["ConnectionStrings:AZURE_SQL_CONNECTION"],
+                      ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:AZURE_SQL_CONNECTION"]
                     )
                   )
                 );
