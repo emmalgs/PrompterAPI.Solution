@@ -63,7 +63,10 @@ DELETE https://localhost:5001/api/prompts/{id}
 * Using [Postman](https://www.postman.com/), use the following urls and/or raw JSON text:
   * **GET** method url:
   ```https://localhost:5001/api/prompts```  
-  _For more specific GET queries, please view the [table](#query-parameters-for-a-get-request-on-animals)_.
+  _Returns a list of all prompts_.
+  * **GET** method url:
+  ```https://localhost:5001/api/prompts/latest```
+  _Returns the latest prompt_.
   * **POST** method raw JSON:
   ```
   {
